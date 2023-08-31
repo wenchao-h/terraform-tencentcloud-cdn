@@ -2,8 +2,8 @@
 ## usage
 terraform file
 ```
-module "tc_sg_web_cdn" {
-  source = "git::https://git.tencent.com/kubegame/terraform-modules.git//tcc-cdn-cos-dns"
+module "cdn" {
+  source = "wenchao-h/cdn/tencentcloud"
 
   region = var.region
   root_uid = var.root_uid
@@ -16,15 +16,15 @@ module "tc_sg_web_cdn" {
 }
 
 output "tc_sg_web_cos_bucket_url" {
-    value = module.tc_sg_web_cdn.tcc_cos_bucket_url
+    value = module.cdn.tcc_cos_bucket_url
 }
 
-output "tc_sg_web_cdn_domain" {
-    value = module.tc_sg_web_cdn.tcc_cdn_domain
+output "cdn_domain" {
+    value = module.cdn.tcc_cdn_domain
 }
 
-output "tc_sg_web_cdn_cname" {
-    value = module.tc_sg_web_cdn.tcc_cdn_cname
+output "cdn_cname" {
+    value = module.cdn.tcc_cdn_cname
 }
 ```
 
